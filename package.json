@@ -1,0 +1,17 @@
+{
+  "name": "oh-hi-markdown",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/morantron/oh-hi-markdown",
+  "author": "Jorge Morante",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^2.0.4",
+    "express": "^4.16.3",
+    "markdown-it": "^8.4.2",
+    "pug": "^2.0.3",
+    "reload": "^2.3.1",
+    "serve-index": "^1.9.1",
+    "serve-static": "^1.13.2"
+  }
+}
