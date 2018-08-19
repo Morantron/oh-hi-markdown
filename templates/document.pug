@@ -1,8 +1,9 @@
 html
   head
     title= title
-    script(type="text/javascript" src="/reload/reload.js")
+    script(type='text/javascript' src='/reload/reload.js')
+    link(rel='stylesheet' media='screen' href='/__oh-hi-markdown-public/styles.css')
+    link(rel='stylesheet' media='print' href='/__oh-hi-markdown-public/print.css')
   body
     div.wrapper
       != markdown_contents
-
