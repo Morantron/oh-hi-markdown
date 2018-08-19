@@ -1,0 +1,23 @@
+@import 'typography';
+@import 'content-wrapper';
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style-type: none;
+    padding: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      background: #fafafa;
+    }
+
+    a {
+      color: $fg-color;
+      text-decoration: none;
+    }
+  }
+}

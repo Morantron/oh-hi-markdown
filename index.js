@@ -4,6 +4,7 @@ const path = require('path')
 const chokidar = require('chokidar')
 const reload = require('reload')
 const sassMiddleware = require('node-sass-middleware')
+const pug = require('pug')
 
 const renderDocument = require('./lib/render-document')
 const { OHM_PREFIX } = require('./lib/constants')
@@ -18,8 +19,28 @@ app.use(sassMiddleware({
   dest: path.join(__dirname, 'public'),
   prefix: OHM_PREFIX
 }))
+
 app.use(OHM_PREFIX, express.static(path.join(__dirname, 'public')))
-app.use(serveIndex(process.cwd()))
+
+const indexTemplate = pug.compileFile(path.join(__dirname, 'templates/file-index.pug'))
+
+app.use(serveIndex(process.cwd(), {
+  template: (locals, callback) => {
+    let error = null
+    let htmlString = ''
+
+    try {
+      htmlString = indexTemplate({
+        ...locals,
+        joinPath: path.join.bind(path)
+      })
+    } catch(e) {
+      error = e
+    }
+
+    callback(error, htmlString)
+  }
+}))
 
 app.get(/\.md$/, renderDocument)
 

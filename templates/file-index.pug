@@ -1,0 +1,22 @@
+html
+  head
+    title= title
+    script(type='text/javascript' src='/reload/reload.js')
+    link(rel='stylesheet' media='screen' href='/__oh-hi-markdown-public/file-index.css')
+    link(rel='stylesheet' media='print' href='/__oh-hi-markdown-public/print.css')
+  body.file-index
+    div.wrapper
+      ul
+        each file in fileList
+          li
+            a(href= joinPath(directory, file.name))
+              if file.name.match(/\.md/)
+                span 📝 &nbsp;
+              else if file.stat.isDirectory()
+                span 📁 &nbsp;
+              else if file.name === '..'
+                span ↩  &nbsp;
+              else
+                span ❔ &nbsp;
+
+              span= file.name
