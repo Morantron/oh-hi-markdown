@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const Typography = require('typography')
+
+const typography = new Typography({
+  baseFontSize: '16px',
+  headerFontFamily: ['Cousine'],
+  bodyFontFamily: ['Cousine'],
+})
+
+process.stdout.write(typography.toString())

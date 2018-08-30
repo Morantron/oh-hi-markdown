@@ -9,16 +9,23 @@
     "chokidar": "^2.0.4",
     "express": "^4.16.3",
     "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.0.2",
     "markdown-it-checkbox": "^1.1.0",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-highlightjs": "^3.0.0",
     "node-sass-middleware": "^0.11.0",
     "open": "^0.0.5",
     "openport": "^0.0.5",
     "pug": "^2.0.3",
     "reload": "^2.3.1",
     "serve-index": "^1.9.1",
-    "signale": "^1.2.1"
+    "signale": "^1.2.1",
+    "typography": "^0.16.17"
   },
   "bin": {
     "ohmd": "./index.js"
+  },
+  "scripts": {
+    "generate-typography-stylesheet": "scripts/generate-typograpy-stylesheet > styles/_base-typography.scss"
   }
 }
