@@ -7,3 +7,13 @@ body {
   font-family: 'Cousine', monospace;
   color: $fg-color;
 }
+
+input[type=checkbox] {
+  -moz-appearance: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid $fg-color !important;
+  padding: 0;
+  margin: 0 0.25rem 0 0;
+  vertical-align: baseline;
+}
